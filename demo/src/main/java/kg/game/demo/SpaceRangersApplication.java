@@ -11,6 +11,7 @@ public class SpaceRangersApplication {
 //		SpringApplication.run(SpaceRangersApplication.class, args);
 
 		// ветка александр
+        int alex;
     }
 
 }
