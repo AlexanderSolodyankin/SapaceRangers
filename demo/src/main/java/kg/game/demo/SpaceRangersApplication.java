@@ -8,10 +8,8 @@ public class SpaceRangersApplication {
 
     public static void main(String[] args) {
 
-//		SpringApplication.run(SpaceRangersApplication.class, args);
+		SpringApplication.run(SpaceRangersApplication.class, args);
 
-		// ветка александр
-        int alex;
     }
 
 }
