@@ -5,17 +5,22 @@
 <title>Меню Игрока </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <style>
-
 h3{
-font-size: 50px;
+    font-size: 50px;
     color: #0095ff;
+    margin: 30px;
+}
+h5{
+    font-size: 30px;
+    color: #0095ff;
+    margin: 0px;
 }
         body{
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+<!--    display: flex;-->
+<!--    justify-content: center;-->
+<!--    align-items: center;-->
     min-height: 100vh;
     background: url(https://i.ytimg.com/vi/vLSk6heV5uw/maxresdefault.jpg);
 }
@@ -97,6 +102,13 @@ bottom: 100%;
 transition: 1s;
 transition-delay: 0.75s;
 }
+
+.moreButton{
+    font-size: 10px;
+    margin: -10px;
+    color: white;
+
+}
     </style>
 </head>
 
@@ -117,6 +129,11 @@ transition-delay: 0.75s;
 
     <div class="container">
         <h3> Выберите игрока </h3>
+        <div th:each="el : ${gamers}">
+            <h5 th:text="${el.fullName}"/>
+            <a class="moreButton" type="submit" value= "th:href='/blog/' + ${el.id} + ${el.createDate}"> Детальнее </a>
+
+        </div>
 
     </div>
 

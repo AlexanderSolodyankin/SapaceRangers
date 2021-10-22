@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public abstract class AbstractBaseEntity {
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private LocalDateTime createDate;

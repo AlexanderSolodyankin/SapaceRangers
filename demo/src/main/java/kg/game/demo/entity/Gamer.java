@@ -2,21 +2,33 @@ package kg.game.demo.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name="gamer")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @ToString
-public class Gamer extends AbstractBaseEntity{
-    @Column(name = "full_name")
+public class Gamer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String fullName;
-    private Long age;
-    private String gender;
+
+    private LocalDateTime createDate;
+    private LocalDateTime updateDate;
+
+    @PrePersist
+    public void prePersist(){
+        this.createDate = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate(){
+        this.updateDate = LocalDateTime.now();
+    }
 }
