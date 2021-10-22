@@ -15,20 +15,28 @@ public class GamerController {
     private GamerService gamerService;
 
     @GetMapping
-    public List<Gamer> getAll(){return gamerService.getAll();}
+    public List<Gamer> getAll() {
+        return gamerService.getAll();
+    }
 
     @GetMapping("/{id}")
-    public Gamer getById(@PathVariable Long id){return gamerService.getById(id);}
+    public Gamer getById(@PathVariable Long id) {
+        return gamerService.getById(id);
+    }
 
-    @PostMapping()
-    public Gamer saveGamer(@RequestBody Gamer gamer){
+    @PostMapping("/save")
+    public Gamer saveGamer(@RequestBody Gamer gamer) {
         System.out.println(gamer);
         return gamerService.saveGamer(gamer);
     }
 
     @PutMapping
-    public Gamer updateGamer(@RequestBody Gamer gamer){return gamerService.saveGamer(gamer);}
+    public Gamer updateGamer(@RequestBody Gamer gamer) {
+        return gamerService.saveGamer(gamer);
+    }
 
     @DeleteMapping("/{id}")
-    public Gamer deleteGamer(@PathVariable Long id){return gamerService.deleteById(id);}
+    public Gamer deleteGamer(@PathVariable Long id) {
+        return gamerService.deleteById(id);
+    }
 }

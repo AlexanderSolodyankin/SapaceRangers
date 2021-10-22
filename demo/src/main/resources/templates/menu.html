@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <title th:text="${menu}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        h1{
+        color: red;
+        }
+        body{
+        background: url(http://i1.ytimg.com/vi/Za5jwotHzFg/maxresdefault.jpg) ;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Главное меню Космических рейнджеров Веб</h1>
+
+<p th:text="'Hello, ' + ${menu} + '!'"/>
+
+</body>
+</html>
