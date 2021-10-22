@@ -1,9 +1,7 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.thymeleaf.org ">
-<head>
-    <title th:text="${menu}"></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>Neon Lihte button</title>
     <style>
         body{
     margin: 0;
@@ -13,9 +11,10 @@
     align-items: center;
     min-height: 100vh;
     background: url(https://i.ytimg.com/vi/vLSk6heV5uw/maxresdefault.jpg);
+    /* font-family: consolas; */
 }
-
 a{
+    
     position: relative;
     display: inline-block;
     padding: 10px 3px;
@@ -34,6 +33,7 @@ a:hover{
     0 0 40px #2196f3,
     0 0 80px #2196f3;
     transition-delay: 1s;
+
 }
 
 a span{
@@ -50,7 +50,7 @@ a span:nth-child(1){
 a:hover span:nth-child(1){
     left: 100%;
     transition: 1s;
-
+     
 }
 
 a span:nth-child(3){
@@ -64,7 +64,7 @@ a:hover span:nth-child(3){
 right: 100%;
 transition: 1s;
 transition-delay: 0.5s;
-
+ 
 }
 a span:nth-child(2){
     top:-100px;
@@ -76,7 +76,7 @@ a span:nth-child(2){
 a:hover span:nth-child(2){
 top: 100%;
 transition: 1s;
-transition-delay: 0.25s;
+transition-delay: 0.25s; 
 }
 
 
@@ -90,29 +90,42 @@ a span:nth-child(4){
 a:hover span:nth-child(4){
 bottom: 100%;
 transition: 1s;
-transition-delay: 0.75s;
+transition-delay: 0.75s; 
 }
     </style>
 </head>
 <body>
+    <center>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Neon Button
+        </a>
 
-<center>
-    <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Выбрать игрока
-    </a>
+    
     <br>
-    <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Выбрать квест
-    </a>
-</center>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Neon Button
+        </a>
 
+    
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Neon Button
+        </a>
+        
+ 
+   
+   
+    
 </body>
 </html>
