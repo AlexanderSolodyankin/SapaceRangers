@@ -26,9 +26,9 @@ public class GamerController{
         return "newGamer";
     }
     @PostMapping("/gamer/newGamer")
-    public String saveGamer(@RequestParam String fullName,  Model model){
+    public String saveGamer(@RequestParam String fullName,  Model model){ // Принимает кастомные параметры и их может быть несколько
         Gamer gamer = new Gamer().builder().fullName(fullName).build();
-        gamerRepository.save(gamer);
+        gamerRepository.save(gamer); // добовляет созданный класс в БД для логики игры его вызывать не надо
         return "redirect:/gamer";
     }
 }
