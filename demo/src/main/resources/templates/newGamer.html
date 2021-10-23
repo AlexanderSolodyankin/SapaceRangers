@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
-   
-    <meta charset="UTF-8">
-    <title>Animated Login Form</title>
+    <title>New Gamer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style>
 
 body{
@@ -57,7 +56,7 @@ body{
     margin: 20px auto;
     text-align: center;
     border: 2px solid #2ecc71;
-    padding: 14px 40px;   
+    padding: 14px 40px;
     outline: none;
     color: white;
     border-radius: 24px ;
@@ -69,16 +68,14 @@ body{
 background: #2ecc71;
 }
 </style>
-    
 </head>
 <body>
-    
-    <form class="box" action="index.html" method="POST">
-        <h1>Login</h1>
-        <input type="text" name="" placeholder="UserName">        
-        <input type="password" name="" placeholder="Password">
-        <input type="submit" name="" value="Log in">
-    </form>
-    
+
+<form class="box" action="/gamer/newGamer" method="POST">
+    <h1>Login</h1>
+    <input type="text" name="fullName" placeholder="UserName">
+    <input type="submit"  value="Log in">
+</form>
+
 </body>
 </html>
