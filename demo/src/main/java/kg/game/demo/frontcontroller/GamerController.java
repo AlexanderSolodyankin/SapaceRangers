@@ -25,6 +25,7 @@ public class GamerController{
     public String newGamer(Model model){
         return "newGamer";
     }
+
     @PostMapping("/gamer/newGamer")
     public String saveGamer(@RequestParam String fullName,  Model model){ // Принимает кастомные параметры и их может быть несколько
         Gamer gamer = new Gamer().builder().fullName(fullName).build();
