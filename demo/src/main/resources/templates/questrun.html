@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <title> Список Квестов </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+               body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://i.playground.ru/i/pix/952839/image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    </style>
+</head>
+<body>
+
+<center>
+
+    <h2 th:text="${discript}"/>
+
+
+    <br>
+
+    <table>
+        <tr>
+            <form action="/quests/quest/questrun" method="get">
+                <input type="hidden" name="action" th:value="${action}">
+                <input type="hidden" name="time" th:value="${time}">
+                <td th:each="el : ${mans}">
+                    <input type="hidden" name="mans" th:value="${el}">
+
+
+                    <input type="submit" name="check" th:value="${el}"/>
+                </td>
+            </form>
+        </tr>
+    </table>
+</center>
+
+
+</body>
+</html>
