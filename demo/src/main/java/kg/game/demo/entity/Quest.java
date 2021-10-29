@@ -20,6 +20,7 @@ public class Quest {
     @Column(unique = true)
     private String questName;
     private String discript;
+    private int time;
 
 
 }

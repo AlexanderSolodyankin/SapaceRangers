@@ -29,7 +29,13 @@ public class QuestController {
     }
     @GetMapping("/quests/quest1")
     public String questGet(@RequestParam String questName, Model model){
-        System.out.println("Я получил " + questName);
-        return "quest1";
+        model.addAttribute("questName", questName);
+        if(questName.equals("Лодка")) {
+            model.addAttribute("discript",
+                    "У экспедиции наших археологов возникла проблема в решении одной головоломки \n" +
+                    "на незаселенной плате в системе Бенатрикс был найден храм и для открытия двери нужно решить\n" +
+                            "небольшую задачу. Если вы сможите ее решить то вы получите щедрую награду.");
+            return "quest1";
+        }else return "menu";
     }
 }

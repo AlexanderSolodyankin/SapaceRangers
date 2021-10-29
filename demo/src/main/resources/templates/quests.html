@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.thymeleaf.org ">
 <head>
-  <title> Список Квестов </title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <style>
+    <title> Список Квестов </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
     h1{
     font-size: 50px;
     color: aqua;
@@ -99,47 +99,53 @@ bottom: 100%;
 transition: 1s;
 transition-delay: 0.75s;
 }
+
     </style>
 </head>
 <body>
 <center>
-  <h1> Космические Рейнджеры: <br> Квесты</h1>
+    <h1> Космические Рейнджеры: <br> Квесты</h1>
 
-  <a href="#">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Посмотреть Рейтинг
-  </a>
-  <br>
-  <div >
-    <h3> Выберите Квест</h3>
-<!--    <div th:each="el : ${quests}">-->
-<!--      <button name="${el.questName" href=-->
-<!--       <h5 th:text="${el.questName}"/>-->
-<!--       <a class="moreButton" type="submit" value= "th:href= ${el.id} + ${el.createDate}"> начать квест </a>-->
-<!--    </div>-->
+    <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Посмотреть Рейтинг
+    </a>
+    <br>
+    <div>
+        <h3> Выберите Квест</h3>
+        <!--    <div th:each="el : ${quests}">-->
+        <!--      <button name="${el.questName" href=-->
+        <!--       <h5 th:text="${el.questName}"/>-->
+        <!--       <a class="moreButton" type="submit" value= "th:href= ${el.id} + ${el.createDate}"> начать квест </a>-->
+        <!--    </div>-->
 
-    <div >
-      <form th:each="el : ${quests}" action="quests/quest1" method="get">
-        <h5 th:text="${el.questName}"/>
-        <input type="radio" name="questName" th:value="${el.questName}">
-      <input type="submit" value="Начать квест">
-      </form>
+        <div>
+            <form action="/quests/quest1" method="GET">
+                <ol>
+                    <li th:each="el : ${quests}">
+                        <h5 th:text="${el.questName}"/>
+                        <input type="radio" name="questName" th:value="${el.questName}">
+                        <input type="submit" value="Начать квест">
+                    </li>
+                </ol>
+            </form>
 
+        </div>
     </div>
-  </div>
 
 
-  <br>
-  <a href="/">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Вернутся в главное меню
-  </a>
+
+    <br>
+    <a href="/">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Вернутся в главное меню
+    </a>
 </center>
 
 </body>
