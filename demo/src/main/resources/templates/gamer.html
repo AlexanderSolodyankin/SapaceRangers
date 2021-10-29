@@ -111,6 +111,10 @@ transition-delay: 0.75s;
     color: white;
 
 }
+
+input{
+font-size: 40px;
+}
     </style>
 </head>
 
@@ -129,8 +133,7 @@ transition-delay: 0.75s;
     <div >
         <h3> Выберите игрока </h3>
         <div th:each="el : ${gamers}">
-            <h5 th:text="${el.fullName}"/>
-            <a class="moreButton" type="submit" value= "th:href= ${el.id} + ${el.createDate}"> Детальнее </a>
+            <input type="submit" name="gamer" th:value="${el.fullName}"/>
         </div>
     </div>
     <br>

@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(https://i.ytimg.com/vi/vLSk6heV5uw/maxresdefault.jpg);
+    background: url(http://cft2.igromania.ru/upload/iblock/1155/48466f/detail.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -115,11 +115,12 @@ transition-delay: 0.75s;
     <br>
 
     <form action="/quests/quest/start" method="get">
-        <input type="checkbox" name="questName" th:value="${questName}">
-        <input type="hidden" name="action" value="start">
-        <input type="submit" value="Start quest">
+        <input type="hidden"  name ="questName" th:value="${questName}">
+        <input type="submit" name="action" value="Start">
     </form>
+
     <br>
+
     <a href="/">
         <span></span>
         <span></span>

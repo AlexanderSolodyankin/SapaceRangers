@@ -100,6 +100,7 @@ transition: 1s;
 transition-delay: 0.75s;
 }
 
+
     </style>
 </head>
 <body>
@@ -123,19 +124,11 @@ transition-delay: 0.75s;
         <!--    </div>-->
 
         <div>
-            <form action="/quests/quest1" method="GET">
-                <ol>
-                    <li th:each="el : ${quests}">
-                        <h5 th:text="${el.questName}"/>
-                        <input type="radio" name="questName" th:value="${el.questName}">
-                        <input type="submit" value="Начать квест">
-                    </li>
-                </ol>
+            <form action="/quests/quest1" th:each="el : ${quests}" method="GET">
+                <input type="submit" name="questName" th:value="${el.questName}">
             </form>
-
         </div>
     </div>
-
 
 
     <br>

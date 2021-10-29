@@ -23,10 +23,10 @@ public class QuestController {
     List<Quest> quests = new ArrayList<>();
     quests.add(Quest.builder().questName("Лодка").build());
     quests.add(Quest.builder().questName("Тюрьма").build());
-
         model.addAttribute("quests", quests);
         return "quests";
     }
+
     @GetMapping("/quests/quest1")
     public String questGet(@RequestParam String questName, Model model){
         model.addAttribute("questName", questName);
@@ -34,8 +34,15 @@ public class QuestController {
             model.addAttribute("discript",
                     "У экспедиции наших археологов возникла проблема в решении одной головоломки \n" +
                     "на незаселенной плате в системе Бенатрикс был найден храм и для открытия двери нужно решить\n" +
-                            "небольшую задачу. Если вы сможите ее решить то вы получите щедрую награду.");
-            return "quest1";
+                            "небольшую задачу. Если вы сможете ее решить то вы получите щедрую награду.");
+            return "discriptQuest";
         }else return "menu";
+    }
+
+    @GetMapping("/quests/quest/start")
+    public String startQuest(@RequestParam String questName, @RequestParam String action, Model model){
+        System.out.println("Получили по квест найм: " + questName);
+        System.out.println("Получили по квест старту: " + action);
+        return "menu";
     }
 }
