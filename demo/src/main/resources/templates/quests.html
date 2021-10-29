@@ -121,11 +121,11 @@ transition-delay: 0.75s;
 <!--       <a class="moreButton" type="submit" value= "th:href= ${el.id} + ${el.createDate}"> начать квест </a>-->
 <!--    </div>-->
 
-    <div th:each="el : ${quests}">
-      <form class="box" action="/quests/${el.questsName}" method="POST">
-        <h1 th:text=" ${el.questName}"/>
-        <input type="${el.questName}" name="fullName" >
-        <input type="submit"  value="Начать квест">
+    <div >
+      <form th:each="el : ${quests}" action="quests/quest1" method="get">
+        <h5 th:text="${el.questName}"/>
+        <input type="radio" name="questName" th:value="${el.questName}">
+      <input type="submit" value="Начать квест">
       </form>
 
     </div>
