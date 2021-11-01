@@ -17,33 +17,37 @@
     background-size: cover;
 }
 
+
+
+
     </style>
 </head>
 <body>
-
 <center>
-
-    <h2 th:text="${discript}"/>
-
-
+    <h2 th:text="${quest1.getDiscript}"/>
     <br>
 
     <table>
         <tr>
             <form action="/quests/quest/questrun" method="get">
-                <input type="hidden" name="action" th:value="${action}">
-                <input type="hidden" name="time" th:value="${time}">
-                <td th:each="el : ${mans}">
-                    <input type="hidden" name="mans" th:value="${el}">
-
-
-                    <input type="submit" name="check" th:value="${el}"/>
+                <input type="hidden" name="action" th:value="${quest1.getAction}">
+                <input type="hidden" name="time" th:value="${quest1.getTime}">
+                <td th:each="el : ${quest1.getRight1}">
+                    <input type="hidden" name="right1" th:value="${el}">
                 </td>
+<!--                <td th:each="el : ${quest1.getRight2}">-->
+<!--                    <input type="hidden" name="right2" th:value="${el}">-->
+<!--                </td>-->
+<!--                <td th:each="el1 : ${quest1.getLeft}">-->
+<!--                    <input type="hidden" name="left" th:value="${el1}">-->
+<!--                </td>-->
+                <td th:each="el : ${quest1.getCheckList}">
+                    <input type="hidden" name="checkList" th:value="${el}">
+                    <input type="submit" name="check" th:value="${el}"/>
             </form>
         </tr>
     </table>
+
 </center>
-
-
 </body>
 </html>

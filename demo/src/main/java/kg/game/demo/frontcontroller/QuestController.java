@@ -2,6 +2,7 @@ package kg.game.demo.frontcontroller;
 
 
 import kg.game.demo.entity.Quest;
+import kg.game.demo.model.QuestBoat;
 import kg.game.demo.repository.QuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,8 @@ import java.util.List;
 public class QuestController {
     @Autowired
     private QuestRepository questRepository;
+
+
 
     @GetMapping("/quests")
     public String menu(Model model){
@@ -41,12 +44,18 @@ public class QuestController {
     }
 
     @GetMapping("/quests/quest/start")
-    public String startQuest( @RequestParam String action,  Model model){
-        int time ;
+    public String startQuest( @RequestParam String action, Model model){
+
        List<String> mans = new ArrayList<>();
         if(action.equals("Start")){
-            time = 18;
-            model.addAttribute("discript","Перед вами находится река и на ней лодка в которую\n" +
+            List<String> right1 = List.of(new String[]{"Чук", "Ахилес", "Балл", "Грогу"});
+            List<String> right2 = List.of(new String[]{"Чук", "Ахилес", "Балл", "Грогу"});
+            List<String> left = List.of(new String[]{"Чук", "Ахилес", "Балл", "Грогу"});
+            List<String> checkList = List.of(new String[]{"Чук", "Ахилес", "Балл", "Грогу"});
+            int time = 18;
+            String check = "";
+            String actions = "right1";
+            String discript = "Перед вами находится река и на ней лодка в которую\n" +
                     "помещается два человека. Вам нужно переместить четырех человек на жругой берег за отведенное время\n" +
                     "в лодку помещается 2 человека. Время с которым плывет лодка отнимается от наибольшего человека.\n" +
                     "Чук самый ловкий и сильный среди всех по этому он плывет 1 час.\n" +
@@ -54,29 +63,35 @@ public class QuestController {
                     "Балл хилый и слабый из за чего он плывет 5 часов\n" +
                     "Грогу самый толстый в группе и плывет 10 часов.\n" +
                     "переправьте всех путников за отведенное время на это вам дается " + time + " часов." +
-                    "Выберите того кого вы посадите в ложку первым.");
-            model.addAttribute("action", "right1");
-            mans.add("Чук");
-            mans.add("Ахилес");
-            mans.add("Балл");
-            mans.add("Грогу");
-            model.addAttribute("mans", mans);
-            model.addAttribute("time", time);
-        }
+                    "Выберите того кого вы посадите в ложку первым.";
+
+            QuestBoat questBoat = QuestBoat.run(right1,right2,left, checkList ,time,check,actions,discript);
+
+            model.addAttribute("quest1", questBoat);
+//            model.addAttribute("action", "right1");
+//            model.addAttribute("mans", mans);
+//            model.addAttribute("time", time);
+    }
         return "questrun";
     }
     @GetMapping("/quests/quest/questrun")
     public String questRun(
             @RequestParam int time,
-            @RequestParam String mans,
+            @RequestParam String right1,
+//            @RequestParam String right2,
+//            @RequestParam String left,
+            @RequestParam String checkList,
             @RequestParam String action,
             @RequestParam String check,
             Model model){
-        System.out.println("Получено время: " + time);
-        System.out.println("Получен лист людей: " + mans);
-        System.out.println("Получена активность : " + action);
-        System.out.println("Получен выбор : " + check);
+        System.out.println("right1 " + right1);
+//        System.out.println("right2 " + right2);
+//        System.out.println("left " + left);
+        System.out.println("checkList " + checkList);
+        System.out.println("check " + check);
+        System.out.println("action " + action);
+        System.out.println("time " + time);
 
-        return "questrun";
+        return "menu";
     }
 }
