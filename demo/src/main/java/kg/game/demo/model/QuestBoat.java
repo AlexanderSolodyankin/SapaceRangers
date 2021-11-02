@@ -97,4 +97,18 @@ public class QuestBoat {
     public void setDiscript(String discript) {
         this.discript = discript;
     }
+
+    @Override
+    public String toString() {
+        return "QuestBoat{" +
+                "right1=" + right1 +
+                ", right2=" + right2 +
+                ", left=" + left +
+                ", checkList=" + checkList +
+                ", time=" + time +
+                ", check='" + check + '\'' +
+                ", action='" + action + '\'' +
+                ", discript='" + discript + '\'' +
+                '}';
+    }
 }

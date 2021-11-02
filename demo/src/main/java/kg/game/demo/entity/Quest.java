@@ -23,4 +23,9 @@ public class Quest {
     private int time;
 
 
+    /**
+     * 1)
+     */
+
+
 }

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Gamer {
+public class Gamer { // user refact
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +20,9 @@ public class Gamer {
     @Column(unique = true)
     private String fullName;
 
+    // password
+    // role
+    //
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
 

@@ -35,12 +35,12 @@
                 <td th:each="el : ${quest1.getRight1}">
                     <input type="hidden" name="right1" th:value="${el}">
                 </td>
-<!--                <td th:each="el : ${quest1.getRight2}">-->
-<!--                    <input type="hidden" name="right2" th:value="${el}">-->
-<!--                </td>-->
-<!--                <td th:each="el1 : ${quest1.getLeft}">-->
-<!--                    <input type="hidden" name="left" th:value="${el1}">-->
-<!--                </td>-->
+                <td th:each="el : ${quest1.getRight2}">
+                    <input type="hidden" name="right2" th:value="${el}">
+                </td>
+                <td th:each="el1 : ${quest1.getLeft}">
+                    <input type="hidden" name="left" th:value="${el1}">
+                </td>
                 <td th:each="el : ${quest1.getCheckList}">
                     <input type="hidden" name="checkList" th:value="${el}">
                     <input type="submit" name="check" th:value="${el}"/>

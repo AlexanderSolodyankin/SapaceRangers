@@ -1,12 +1,16 @@
 package draft;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class draft {
     public static void main(String[] args) {
-        String write = "a,bc,d";
-        List<String> srt = List.of(write.split(","));
+//        List<String>  right1 = Arrays.asList(new String[]{"Чук", "Ахилес", "Балл", "Грогу"});
+//
+//        right1.
+//        System.out.println(right1);
 
 
 
