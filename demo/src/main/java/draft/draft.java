@@ -11,7 +11,7 @@ public class draft {
 //        String name = "петя";
 //        char ch1 = 'л';
 //        char ch2 = 'е';
-//        char ch3 = 'т';
+//        char ch3 = 'т';йц
 //        int num = 57;
 //
 //        age = num - age;
